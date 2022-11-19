@@ -1,6 +1,14 @@
-I have compared only the 10 firsts seconds because the transformation between codecs was so slowly and hard. In this time we can not notice a huge change in quality on the videos,
+In this exercise I wanted to compare the different codecs applied to two videos from different sources.
+
+In the first one, final_video1.mp4, from the BigBuckBunny_512kb.mp4 source. I have compared only the 10 firsts seconds because the transformation between codecs was so slowly and hard. In this time we can not notice a huge change in quality on the videos,
 they seem equally fluid with each other. The results that we have obtained are very similar.
 
-In this part of the video we can observe the movement of the water and a movement of a bird. The main difference that I have found is that one of the videos change between the scenes at different time than the others. One of the scenes this video was advanced and in other change it was more slow. I have attached a capture of the situation in the same folder.
+In this part of the video we can observe the movement of the water and a movement of a bird. The main difference that I have found is that one of the videos change between the scenes at different time than the others. One of the scenes this video was advanced and in other change it was more slow. I have attached a capture of the situation in the same folder. In addition, it may seem that the grays of some videos are darker than those of the others.
 
 
+In the second one, final_video.mp4, from the BigBuckBunny.mp4, the source video is of a higher quality. (That's why I wanted to compare another video). This video does not have audio as we can see in the screenshot of the folder. I had to modify the command a bit to join the four videos, it looks like this.  
+
+ffmpeg -i output.webm -i output2.webm -i output.mp4 -i output.mkv -filter_complex "[0:v][1:v]hstack[t];[2:v][3:v]hstack[b];[t][b]vstack[v]" -map "[v]" -ac 2 -shortest final_video.mp4
+
+
+As in the previous case, I don't notice a significant difference, but it gives me the feeling that the first video (VP8) is less fluid compared to the others.

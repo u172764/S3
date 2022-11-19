@@ -1,7 +1,7 @@
 import os
 
 # We inform the user about the different options
-vide_name = 'video_cortado2.mp4'  # we have cut the video since the original BBB was so slow
+vide_name = 'BigBuckBunny_512kb.mp4'  # we have cut the video since the original BBB was so slow
 
 
 # depending on the option the user has chosen we execute a concrete command
